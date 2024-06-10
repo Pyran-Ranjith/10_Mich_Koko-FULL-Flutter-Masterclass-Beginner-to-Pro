@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProgrammingFundamentals extends StatelessWidget {
-  const ProgrammingFundamentals({super.key});
+class Navigations extends StatelessWidget {
+  const Navigations({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:masterclass_beginner_to_pro/10_03_navigations/home_page.dart';
-// import 'package:masterclass_beginner_to_pro/10_03_navigations/second_page.dart';
-import 'package:masterclass_beginner_to_pro/10_03_navigations/settings_page.dart';
-// import '10_02_programming_fundamentals/10_02_programming_fundamentals.dart';
-import '10_03_navigations/bottom_navigator_page.dart';
-import '10_03_navigations/first_page.dart';
 import '10_04_stateless_statefull_widget/counter_page.dart';
 
 void main() {
@@ -26,14 +20,8 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // home: const ProgrammingFundamentals(),
-      // home:  const First_Page(),
-      // home:  const CounterPage(),
-      home:  const BottomNavigatorPage(),
+      home:  const CounterPage(),
       routes: {
-        '/firstpage' :(context) =>  const First_Page(),
-        '/homepage' :(context) => const HomePage(),
-        '/settingspage' :(context) => const SettingsPage(),
-        '/bottomnavigatorpage' :(context) => const BottomNavigatorPage(),
         '/counterpage' :(context) => const CounterPage(),
       },
     );

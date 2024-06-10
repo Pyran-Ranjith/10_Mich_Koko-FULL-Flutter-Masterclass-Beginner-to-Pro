@@ -26,9 +26,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // home: const ProgrammingFundamentals(),
-      // home:  const First_Page(),
-      // home:  const CounterPage(),
-      home:  const BottomNavigatorPage(),
+      home:  const First_Page(),
       routes: {
         '/firstpage' :(context) =>  const First_Page(),
         '/homepage' :(context) => const HomePage(),
