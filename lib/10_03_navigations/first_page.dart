@@ -5,8 +5,12 @@ import 'package:masterclass_beginner_to_pro/10_03_navigations/profile_page.dart'
 import 'package:masterclass_beginner_to_pro/10_03_navigations/settings_page.dart';
 import 'package:masterclass_beginner_to_pro/10_04_stateless_statefull_widget/counter_page.dart';
 
+import '../10_06_todo_app.dart/hone_page6.dart';
+
 class First_Page extends StatefulWidget {
-  const First_Page({super.key});
+  // const First_Page({super.key});
+  const First_Page({super.key, required this.title});
+  final String title;
 
   @override
   State<First_Page> createState() => _First_PageState();
@@ -25,20 +29,24 @@ class _First_PageState extends State<First_Page> {
 
   final List _pages = [
     // home page
-    HomePage(),
+    HomePage6(),
     // profile page
     ProfilePage(),
-    // counter page
-    CounterPage(),
     // setting page
     SettingsPage(),
+    // home page
+    HomePage(),
+    // counter page
+    CounterPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
       appBar: AppBar(
-        title: const Text("1st Page"),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // title: const Text("1st Page"),
+        title: Text(widget.title),
       ),
 
       drawer: Drawer(
@@ -51,6 +59,18 @@ class _First_PageState extends State<First_Page> {
                 Icons.favorite,
                 size: 48,
               ),
+            ),
+
+            // home page6 list tile
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Home Page-6'),
+              onTap: () {
+                // pop drawer first
+                Navigator.pop(context);
+                // go to home page6
+                Navigator.pushNamed(context, '/homepage6');
+              },
             ),
 
             // home page list tile
@@ -84,6 +104,16 @@ class _First_PageState extends State<First_Page> {
               onTap: () {
                 // go to counter page
                 Navigator.pushNamed(context, '/counterpage');
+              },
+            ),
+
+            // todo page list tile
+            ListTile(
+              leading: const Icon(Icons.document_scanner),
+              title: const Text("ToDo Page"),
+              onTap: () {
+                // go to counter page
+                Navigator.pushNamed(context, '/todopage');
               },
             ),
 
@@ -126,12 +156,12 @@ class _First_PageState extends State<First_Page> {
           ),
 
           // counter
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.countertops,
-            ),
-            label: 'Counter',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(
+          //     Icons.countertops,
+          //   ),
+          //   label: 'Counter',
+          // ),
 
           // setings
           BottomNavigationBarItem(

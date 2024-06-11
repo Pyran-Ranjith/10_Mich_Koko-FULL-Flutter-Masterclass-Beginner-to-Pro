@@ -8,10 +8,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
-      // appBar: AppBar(
-      //   title: Center(child: Text("Home Page")),
-      // ),
+      backgroundColor: Colors.yellow[200],
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Center(child: Text("Home Page")),
+      ),
 
       body: Center(child: Text("Home Page"))
     );
