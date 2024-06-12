@@ -1,5 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+
+import 'util/todo_tile.dart';
 
 class HomePage6 extends StatefulWidget {
   const HomePage6({super.key});
@@ -9,18 +11,47 @@ class HomePage6 extends StatefulWidget {
 }
 
 class _HomePage6State extends State<HomePage6> {
+
+  // list of todo task
+  List toDoList = [
+    ["Make Tutorial", true],
+    ["Do Exercise", false],
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[200],
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.yellow[200],
         // title: Center(child: Text("Home Page-6")),
-        title: Center(child: Text("To Do Page")),
+        title: Center(child: Text("To Do")),
+        elevation: 0,
       ),
 
       // body: Center(child: Text("Home Page-6"))
-      body: Center(child: Text("To Do Page"))
-    );
-  }
+
+      // Using LiistView
+      // body: 
+      // ListView(
+      //   children: [
+          // TodoTile(
+          //   taskName: "Make Tutorial",
+          //   taskCompleated: true,
+          //   onChanged: (p0) {},
+          // ),
+        // ],
+
+        body: ListView.builder(
+          itemCount: toDoList.length,
+          itemBuilder: (context, index) {
+            return TodoTile(
+              taskName: toDoList[index][0], 
+              taskCompleated: toDoList[index][1], 
+              onChanged: (value) => ,
+              );
+          },
+          ),
+
+      );
 }
